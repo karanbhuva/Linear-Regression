@@ -65,3 +65,7 @@ plt.plot([min(x_train),max(x_train)],[equation(min(x_train)),equation(max(x_trai
 plt.show()
 
 print("slope:",an,"        Intercept:",bn)
+
+prediction=[]
+for i in range(len(x_test)):
+    prediction.append((an*x_test[i])+bn)
