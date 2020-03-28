@@ -10,17 +10,21 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-data1=pd.read_csv("Salary_Data.csv")
-data=data1.values.tolist()
+#data1=pd.read_csv("Salary_Data.csv")
+#data=data1.values.tolist()
+data=pd.read_csv("weight-height.csv")
+height=list(data["Height"])
+weight=list(data["Weight"])
 
 x=[]
 y=[]
+"""
 for i in range(len(data)):
     x.append(data[i][0])
     y.append(data[i][1])
-
-x=np.array(x).reshape((-1,1))
-y=np.array(y)
+"""
+x=np.array(height).reshape((-1,1))
+y=np.array(weight)
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
 
 model=LinearRegression().fit(x_train, y_train)
